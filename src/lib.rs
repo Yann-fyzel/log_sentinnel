@@ -1,7 +1,7 @@
 pub mod  models;
 pub mod detector;
 
-pub use detector::analyse;
-pub use models::schema::AttackSchema;
+pub use detector::start_watch;
+pub use models::schema::MonitorSchema;
 pub use models::reporting::AlertReport;
 pub use models::configuration::Arguments;

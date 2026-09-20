@@ -1,17 +1,23 @@
-#[derive(Debug,Clone,Copy)]
-pub enum AttackSchema{
-    SqlInjection,
-    DirectoryTraversal,
-    Xss,
+pub enum LEVEL {
+    Low,
+    Meduim,
+    High,
+    Critical
 }
 
-impl AttackSchema {
-    pub fn as_pattern(&self) -> &'static str {
-        match self {
-            AttackSchema::SqlInjection => "UNION SELECT",
-            AttackSchema::DirectoryTraversal => "../",
-            AttackSchema::Xss => "<script>",
+#[derive(Debug, Clone)]
+pub struct MonitorSchema {
+    pub title: String,
+    pub pattern: String, 
+    pub level: LEVEL,
+}
+
+impl MonitorSchema {
+    pub fn new(nom: &str, pattern: &str) -> Self {
+        Self {
+            title: nom.to_string(),
+            pattern: pattern.to_string(),
+            level
         }
     }
 }
-
