@@ -89,11 +89,12 @@ pub async  fn start_watch(
         for schema in schemas_clone.iter() {
             if log_line_clean .contains(&schema.pattern) {
                 let payload = AlertReport {
-                    hostname: host_clone.to_string(),
-                    local_ip: ip_clone.to_string(),
                     title : schema.title.clone(),
-                    type_attaque: schema.pattern.clone(),
+                    priorite: schema.level.clone(),
                     log_line: log_line_clean .clone(),
+                    local_ip: ip_clone.to_string(),
+                    hostname: host_clone.to_string(),
+                    type_attaque: schema.pattern.clone(),
                 };
 
                 if args.verbose {

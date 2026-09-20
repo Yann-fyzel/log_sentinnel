@@ -1,0 +1,22 @@
+[
+  {
+    "nom_attaque": "Injection SQL",
+    "mot_cle": "UNION SELECT",
+    "severite": "Critique"
+  },
+  {
+    "nom_attaque": "Tentative Path Traversal",
+    "mot_cle": "../",
+    "severite": "Eleve"
+  },
+  {
+    "nom_attaque": "Erreur Ressource Introuvable",
+    "mot_cle": " 404 ",
+    "severite": "Faible"
+  },
+  {
+    "nom_attaque": "Tentative Force Brute Admin",
+    "mot_cle": "/wp-login.php",
+    "severite": "Moyenne"
+  }
+]

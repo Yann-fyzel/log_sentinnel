@@ -2,9 +2,12 @@ use std::sync::Arc;
 use serde::Serialize;
 use tokio::time::{sleep, Duration};
 
+use crate::models::schema::LEVEL;
+
 #[derive(Serialize, Debug, Clone)]
 pub struct AlertReport {
     pub title: String,
+    pub priorite:LEVEL,
     pub log_line: String,
     pub local_ip: String,
     pub hostname: String,

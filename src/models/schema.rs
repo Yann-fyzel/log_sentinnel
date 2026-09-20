@@ -1,3 +1,6 @@
+use serde::{Deserialize, Serialize};
+
+#[derive(Serialize, Debug, Clone,Deserialize,PartialEq)]
 pub enum LEVEL {
     Low,
     Meduim,
@@ -5,7 +8,7 @@ pub enum LEVEL {
     Critical
 }
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone,Serialize,Deserialize)]
 pub struct MonitorSchema {
     pub title: String,
     pub pattern: String, 
@@ -13,7 +16,7 @@ pub struct MonitorSchema {
 }
 
 impl MonitorSchema {
-    pub fn new(nom: &str, pattern: &str) -> Self {
+    pub fn new(nom: &str, pattern: &str,level:LEVEL) -> Self {
         Self {
             title: nom.to_string(),
             pattern: pattern.to_string(),
