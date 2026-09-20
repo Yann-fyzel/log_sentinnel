@@ -1,4 +1,4 @@
-use std::fs;
+use std::{fs, sync::Arc};
 
 use clap::Parser;
 use local_ip_address::local_ip;
@@ -43,7 +43,9 @@ async fn main() {
         }
     };
 
+    let schemas_partages = Arc::new(tokio::sync::RwLock::new(liste_schemas));
+
     println!("Surveillance active du fichier : {}", args.file);
 
-    start_watch(args, hostname, ip_address, liste_schemas).await;
+    start_watch(args, hostname, ip_address, schemas_partages).await;
 }
