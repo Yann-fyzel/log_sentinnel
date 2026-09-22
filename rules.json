@@ -1,22 +1,92 @@
 [
   {
-    "nom_attaque": "Injection SQL",
-    "mot_cle": "UNION SELECT",
-    "severite": "Critique"
+    "title": "Injection SQL",
+    "pattern": "UNION SELECT",
+    "level": "Critical"
   },
   {
-    "nom_attaque": "Tentative Path Traversal",
-    "mot_cle": "../",
-    "severite": "Eleve"
+    "title": "Tentative Path Traversal",
+    "pattern": "../",
+    "level": "High"
   },
   {
-    "nom_attaque": "Erreur Ressource Introuvable",
-    "mot_cle": " 404 ",
-    "severite": "Faible"
+    "title": "Page introuvable",
+    "pattern": " 404 ",
+    "level": "Low"
   },
   {
-    "nom_attaque": "Tentative Force Brute Admin",
-    "mot_cle": "/wp-login.php",
-    "severite": "Moyenne"
+    "title": "Tentative Force Brute Admin",
+    "pattern": "/wp-login.php",
+    "level": "Meduim"
+  },
+  {
+    "title": "Cross-Site Scripting (XSS)",
+    "pattern": "<script",
+    "level": "High"
+  },
+  {
+    "title": "Injection SQL par tautologie",
+    "pattern": "' OR '1'='1",
+    "level": "Critical"
+  },
+  {
+    "title": "Injection de commande Unix",
+    "pattern": "; cat /etc/passwd",
+    "level": "Critical"
+  },
+  {
+    "title": "Injection de commande Windows",
+    "pattern": "| whoami",
+    "level": "Critical"
+  },
+  {
+    "title": "Injection LDAP",
+    "pattern": ")*(uid=*)",
+    "level": "High"
+  },
+  {
+    "title": "Server-Side Request Forgery (SSRF)",
+    "pattern": "169.254.169.254",
+    "level": "High"
+  },
+  {
+    "title": "Injection XML Externe (XXE)",
+    "pattern": "<!DOCTYPE",
+    "level": "High"
+  },
+  {
+    "title": "Vulnérabilité Log4Shell",
+    "pattern": "${jndi:ldap://",
+    "level": "Critical"
+  },
+  {
+    "title": "Accès via wrapper PHP",
+    "pattern": "php://filter",
+    "level": "High"
+  },
+  {
+    "title": "Path Traversal Windows",
+    "pattern": "..\\",
+    "level": "High"
+  },
+  {
+    "title": "Accès au fichier des mots de passe",
+    "pattern": "/etc/passwd",
+    "level": "Critical"
+  },
+  {
+    "title": "JWT avec algorithme none",
+    "pattern": "\"alg\":\"none\"",
+    "level": "High"
+  },
+  {
+    "title": "Exposition Spring Actuator",
+    "pattern": "/actuator/env",
+    "level": "High"
+  },
+  {
+    "title": "Exposition du dépôt Git",
+    "pattern": "/.git/config",
+    "level": "High"
   }
 ]
